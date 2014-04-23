@@ -1,0 +1,343 @@
+% \documentclass{fp-slides}
+\documentclass[10pt,portrait]{beamer}
+\usepackage{mathtext}
+\usetheme{Warsaw}
+\newcommand{\maybepause}{}
+%\newcommand{\maybepause}{\pause}
+\setlength{\floatsep}{8pt plus 2pt minus 2pt}
+\setlength{\textfloatsep}{8pt plus 2pt minus 2pt}
+\setlength{\intextsep}{12pt plus 2pt minus 2pt}
+\AtBeginDocument{%
+% \selectlanguage{russian}%
+\frenchspacing
+\righthyphenmin=2
+\sloppy
+%\author{Shiray Andrey}
+\institute{O.O.Bogomolets National Medical University}
+\title{Sets, Algebra and Logic}
+% Basics of statistical processing of biomedical  data
+}
+
+% \ifx\pdfoutput\undefined
+% % we are running LaTeX, not pdflatex
+% \usepackage{graphicx}
+% \else
+% % we are running pdflatex, so convert .eps files to .pdf
+% \usepackage[pdftex]{graphicx}
+% \usepackage{epstopdf}
+% \fi 
+\usepackage{graphics}
+\newtheorem{defin}{Definition}[section]
+\newtheorem{exa}{Example}[section]
+\begin{document}
+
+%%%%%%%%%%%%%%% Define code blocks
+
+% \defverbatim[colored]\factCcode{%
+% \begin{lstlisting}[frame=single,language=C]
+%   int fact(int n)
+%   { int x = 1;
+%     while (n > 0)
+%      { x = x * n;
+%        n = n - 1;
+%      }
+%     return x;
+%   }
+% \end{lstlisting}}
+% 
+% \defverbatim[colored]\factMLcode{%
+% \begin{lstlisting}[frame=single]
+%   let rec fact n =
+%     if n = 0 then 1
+%     else n * fact(n - 1);;
+% \end{lstlisting}}
+% 
+% \defverbatim[colored]\badFuncCode{%
+% \begin{lstlisting}[frame=single]
+%   int rand(void)
+%   { static int n = 0;
+%     return n = 2147001325 * n + 715136305;
+%   }
+% \end{lstlisting}}
+
+%%%%%%%%%%%%%%%%%%%%%%
+
+\frame{\titlepage}
+
+% \section*{Biostatistics}
+
+%\subsection{Обсуждаемые темы}
+
+
+\frame{
+  \frametitle{Abstraction}
+\Huge
+\begin{center}
+\begin{tabular}{l|l}
+1 & Objects\\
+2 & Numbers\\
+3 & Arithmetic\\
+4 & Algebra\\
+5 & Cathegory
+\end{tabular}
+\end{center}
+
+
+}
+
+\frame{
+  \frametitle{Sets}
+\begin{defin}
+ A \textbf{set} is a well defined collection of objects
+\end{defin}
+
+
+}
+
+\frame{
+  \frametitle{Sets}
+\begin{defin}
+ A \textbf{set} is a well defined collection of objects
+\end{defin}
+
+Naive set theory is not so simple and perfect:
+\[
+ R = \{ x \mid x \not \in x \} \text{, then } R \in R \iff R \not \in R
+\]
+
+}
+
+\frame{
+  \frametitle{Membership and subsets}
+\Huge
+\[
+ A = \{1,2,3,4\}, B = \{\alpha, \beta, \gamma\}
+\]
+\begin{center}
+\begin{tabular}{l|l}
+$1 \in A$ & $\{1, 4\} \subset A$\\
+$\alpha \in B$ & $\{\alpha, \beta\} \nsubseteq A$\\
+$\alpha \notin A$ & $\{1,2,3,4\} \subseteq A$ 
+\end{tabular}
+\end{center}
+
+
+
+
+
+}
+\frame{
+  \frametitle{Basic operations}
+Union:
+\[
+ A  \cup B = \{ x: x \in A \,\,\,\textrm{ or }\,\,\, x \in B\}
+\]
+Intersection:
+\[
+ A \cap B = \{ x: x \in A \,\land\, x \in B\}
+\]
+Complement:
+\[
+ B \smallsetminus A = \{ x\in B \, | \, x \notin A \}
+\]
+
+
+}
+
+\frame{
+  \frametitle{Cartesian product and power sets}
+\begin{defin}
+ \textbf{Power set}  of any set S, written  is the set of all subsets of S, including the empty set and S itself
+\end{defin}
+\begin{exa}
+ \[
+  2^{\{1,2,3\}} = \{\{1, 2, 3\}, \{1, 2\}, \{1, 3\}, \{2, 3\}, \{1\}, \{2\}, \{3\}, \varnothing \}
+ \]
+
+\end{exa}
+\begin{defin}
+\textbf{Cartesian product}:
+\[
+ X\times Y = \{\,(x,y)\mid x\in X \ \text{and} \ y\in Y\,\}
+\]
+\end{defin}
+\begin{exa}
+\[
+  \{1, 2\} \times \{a, b\} = \{(1, a), (1, b), (2, a), (2, b)\}
+\]
+
+
+\end{exa}
+
+
+}
+\frame{
+  \frametitle{Algebraic structure}
+Algebraic structure:
+\[
+ <C, W >
+\]
+where C -- \textbf{carrier set} and W -- set of operations on C.
+
+\begin{exa}
+ \[
+  <\mathbb{Z}, \{+, *\}>
+ \]
+
+\end{exa}
+
+
+}
+
+
+
+\frame{
+  \frametitle{Propositional Logic}
+\begin{itemize}
+ \item \Large Proposition: statement that is either true or false.
+\end{itemize}
+
+
+}
+\frame{
+  \frametitle{Propositional Logic}
+\begin{itemize}
+ \item \Large Proposition: statement that is either true or false.
+\item \Huge ``This statement is false.''
+\end{itemize}
+
+}
+\frame{
+  \frametitle{Propositional language}
+\begin{itemize}
+ \item \Large An infinite set of variables(\textbf{propositions})
+\item A set of \textbf{operators}
+\item Separate values \textbf{TRUE} and \textbf{FALSE}
+\end{itemize}
+
+}
+\frame{
+  \frametitle{Propositional Operators}
+\begin{itemize}
+ \item \Large  Negation
+\item Disjunction
+\item Conjunction
+\item Implication
+\item Equivalence
+\end{itemize}
+
+
+}
+\frame{
+  \frametitle{Negation}
+\Huge
+\begin{center}
+\begin{tabular}{l|l}
+
+A & $\neg A$\\ \hline
+TRUE & FALSE\\
+FALSE & TRUE
+\end{tabular}
+
+\end{center}
+
+
+}
+\frame{
+  \frametitle{Disjunction (or)}
+\Huge
+
+\begin{center}
+\begin{tabular}{l|l|l|l}
+$A\vee B$& \textbf{TRUE} & \textbf{FALSE} & \textbf{B}\\ \hline
+\textbf{TRUE} & TRUE & TRUE\\  \hline
+\textbf{FALSE} & TRUE & FALSE \\ \hline
+\textbf{A} 
+\end{tabular}
+\end{center}
+
+
+}
+
+\frame{
+  \frametitle{Conjunction (and)}
+\Huge
+
+\begin{center}
+\begin{tabular}{l|l|l}
+$A\wedge B$& \textbf{TRUE} & \textbf{FALSE} \\ \hline
+\textbf{TRUE} & TRUE & FALSE\\ \hline
+\textbf{FALSE} & FALSE & FALSE
+\end{tabular}
+\end{center}
+
+
+}
+
+\frame{
+  \frametitle{Implication (if$\dots$then)}
+\Huge
+
+\begin{center}
+\begin{tabular}{l|l|l}
+$A\Rightarrow B$ & \textbf{TRUE} & \textbf{FALSE} \\ \hline
+\textbf{TRUE} & TRUE & FALSE\\ \hline
+\textbf{FALSE} & TRUE & TRUE
+\end{tabular}
+\end{center}
+
+
+}
+
+\frame{
+  \frametitle{Equivalence}
+\Huge
+
+\begin{center}
+\begin{tabular}{l|l|l}
+$A\Leftrightarrow B$ & \textbf{TRUE} & \textbf{FALSE} \\ \hline
+\textbf{TRUE} & TRUE & FALSE\\ \hline
+\textbf{FALSE} & FALSE & TRUE
+\end{tabular}
+\end{center}
+
+
+}
+
+\frame{
+  \frametitle{Algebra and Logic}
+
+
+ \resizebox{1.0\hsize}{!}{$<\{TRUE, FALSE\}, \{\neg,\vee, \wedge, \Rightarrow, \Leftrightarrow \}>$}
+
+
+}
+
+\frame{
+  \frametitle{Inference: Modus Ponens}
+\Large Modus Ponens (rule of detachment):
+
+
+\begin{center}
+\begin{tabular}{l|l}
+A & Ted is cold\\
+$A\Rightarrow B$ & If Ted is cold, he shivers\\ \hline
+B & Ted shivers
+\end{tabular}
+\end{center}
+
+
+}
+
+
+\frame{
+\frametitle{Dixi}
+
+\begin{center}
+\Huge Dixi\end{center}
+}
+% \frame{
+%   \frametitle{Dixi}
+% \resizebox{.4\hsize}{!}{ Dixi }
+% }
+\end{document}

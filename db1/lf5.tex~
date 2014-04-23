@@ -1,0 +1,286 @@
+% \documentclass{fp-slides}
+\documentclass[10pt,portrait]{beamer}
+\usepackage{mathtext}
+\usetheme{Warsaw}
+\newcommand{\maybepause}{}
+%\newcommand{\maybepause}{\pause}
+\setlength{\floatsep}{8pt plus 2pt minus 2pt}
+\setlength{\textfloatsep}{8pt plus 2pt minus 2pt}
+\setlength{\intextsep}{12pt plus 2pt minus 2pt}
+\AtBeginDocument{%
+% \selectlanguage{russian}%
+\frenchspacing
+\righthyphenmin=2
+\sloppy
+%\author{Shiray Andrey}
+\institute{O.O.Bogomolets National Medical University}
+\title{Databases 2}
+% Basics of statistical processing of biomedical  data
+}
+
+% \ifx\pdfoutput\undefined
+% % we are running LaTeX, not pdflatex
+% \usepackage{graphicx}
+% \else
+% % we are running pdflatex, so convert .eps files to .pdf
+% \usepackage[pdftex]{graphicx}
+% \usepackage{epstopdf}
+% \fi 
+\usepackage{graphics}
+\newtheorem{defin}{Definition}[section]
+\newtheorem{exa}{Example}[section]
+\begin{document}
+
+%%%%%%%%%%%%%%% Define code blocks
+
+% \defverbatim[colored]\factCcode{%
+% \begin{lstlisting}[frame=single,language=C]
+%   int fact(int n)
+%   { int x = 1;
+%     while (n > 0)
+%      { x = x * n;
+%        n = n - 1;
+%      }
+%     return x;
+%   }
+% \end{lstlisting}}
+% 
+% \defverbatim[colored]\factMLcode{%
+% \begin{lstlisting}[frame=single]
+%   let rec fact n =
+%     if n = 0 then 1
+%     else n * fact(n - 1);;
+% \end{lstlisting}}
+% 
+% \defverbatim[colored]\badFuncCode{%
+% \begin{lstlisting}[frame=single]
+%   int rand(void)
+%   { static int n = 0;
+%     return n = 2147001325 * n + 715136305;
+%   }
+% \end{lstlisting}}
+
+%%%%%%%%%%%%%%%%%%%%%%
+
+\frame{\titlepage}
+
+% \section*{Biostatistics}
+
+%\subsection{Обсуждаемые темы}
+
+
+\frame{
+  \frametitle{Data and databases}
+\begin{defin}
+ \textbf{Data} refers to qualitative or quantitative attributes of a variable or set of variables, stored in some way.
+\end{defin}
+
+\begin{defin}
+\textbf{Database management system (DBMS)} is a software system specifically designed to hold databases
+
+\end{defin}
+Database Management System (DBMS) provides  efficient, reliable, convenient, and safe multi-user storage of and access to massive
+amounts of persistent data.
+
+
+
+}
+\frame{
+  \frametitle{DBMS}
+Key concepts:
+\begin{itemize}
+ \item Data model
+\item Schema versus data
+\item Data definition language (DDL)
+\item Data manipulation language (DML)
+\end{itemize}
+
+
+}
+
+\frame{
+  \frametitle{Types}
+\begin{defin}
+ \textbf{Data type}  is a classification  that determines the \textbf{possible values} for that type; the \textbf{operations} that can be done on values of that type; the meaning of the data; and the way values of that type can be stored.
+\end{defin}
+
+
+
+}
+
+\frame{
+  \frametitle{Relational Databases}
+The Relational Model:
+\begin{itemize}
+ \item Very simple model
+\item Used by all major commercial database systems
+\item Efficient implementations
+\end{itemize}
+
+\begin{itemize}
+ \item \textbf{Instance} -- actual contents at given point in time
+\item \textbf{Database} -- set of named relations (tables)
+\item Each \textbf{relation} has a set of named \textit{attributes} (columns)
+\item Each \textbf{tuple} (row) has a \textit{value} for each attribute
+\item Each \textbf{attribute} has a \textit{type} (domain)
+\end{itemize}
+
+
+\begin{defin}
+\textbf{Key} -- attribute(or set of attributes) whose value is unique (in each tuple)
+
+\end{defin}
+
+
+}
+% \frame{
+%   \frametitle{Indexes}
+% \begin{itemize}
+%  \item Primary mechanism to get improved performance on a database
+% \item Persistent data structure, stored in database
+% \item difference between full table scans and immediate location of tuples
+% \item Many DBMS’s build indexes automatically on primary key and/or unique attributes
+% \end{itemize}
+% 
+% 
+% }
+
+
+% \frame{
+%   \frametitle{Relational Algebra (1)}
+% 
+% 
+% }
+% \frame{
+%   \frametitle{Relational Algebra (2)}
+% 
+% 
+% }
+
+
+
+\frame{
+  \frametitle{Relational Design Theory}
+\begin{itemize}
+\item Usually many designs possible
+\item Some are better than others!
+\end{itemize}
+
+
+Design by decomposition:
+\begin{itemize}
+ \item  Start with “mega” relations containing everything
+\item Decompose into smaller, better relations with same info 
+\item System decomposes based on properties
+\end{itemize}
+
+
+}
+
+% \frame{
+%   \frametitle{Functional Dependencies}
+% 
+% 
+% }
+% 
+\frame{
+  \frametitle{Boyce-Codd Normal Form}
+\begin{defin}
+ \textbf{Normal} forms  of relational database theory provide criteria for determining a table's degree of vulnerability to logical inconsistencies and anomalies. 
+\end{defin}
+
+
+	
+}
+\frame{
+  \frametitle{Boyce-Codd Normal Form}
+
+\begin{center}
+\begin{tabular}{l|p{5cm}}
+First normal form & Table faithfully represents a relation and has no repeating groups\\ \hline
+Second normal form & No non-prime attribute in the table is functionally dependent on a proper subset of any candidate key\\ \hline
+Third normal form & Every non-prime attribute is non-transitively dependent on every candidate key in the table. The attributes that do not contribute to the description of the primary key are removed from the table. In other words, no transitivity dependency is allowed.\\ \hline
+Boyce–Codd normal form & Every non-trivial functional dependency in the table is a dependency on a superkey
+\end{tabular}
+\end{center}
+
+	
+}
+\frame{
+  \frametitle{Example}
+Megarelation:
+\begin{center}
+\begin{tabular}{lllll}
+Name & Job & Room & Salary & PC\\
+Grisha Perelman & Genius & 107 & 0 & Yes\\
+Dorogovcev A. A. & Mathematician & 101 & 1000 & Yes\\
+Vovchansky M. B. & Grad. student & 101 & 500 & No\\
+\end{tabular}
+...
+\end{center}
+$\{\text{Name}, \text{Job}\}$ -- primary key
+
+}
+\frame{
+  \frametitle{Example}
+Second normal form:
+\begin{enumerate}
+ \item Name, Job, Salary
+\item Job, PC
+\item Name, Room
+\end{enumerate}
+
+
+}
+
+\frame{
+  \frametitle{Example}
+Let.s assume that we have 2NF:
+\begin{enumerate}
+ \item Name, Job, Salary
+\item Job, PC
+\item Name, Room, Telephone
+\end{enumerate}
+We have transitive relation:
+
+
+Name -- Room -- Telephone
+}
+\frame{
+  \frametitle{Example}
+3NF:
+\begin{enumerate}
+ \item Name, Job, Salary
+\item Job, PC
+\item Name, Room
+\item Room, Telephone
+\end{enumerate}
+
+
+}
+% 
+% \frame{
+%   \frametitle{Multivalued Dependencies}
+% 
+% 
+% }
+% 
+% \frame{
+%   \frametitle{Shortcomings of BCNF/4NF}
+% 
+% 
+% }
+
+
+
+\frame{
+\frametitle{Dixi}
+
+\begin{center}
+\Huge Dixi\end{center}
+}
+% \frame{
+%   \frametitle{Dixi}
+% \resizebox{.4\hsize}{!}{ Dixi }
+% }
+\end{document}

@@ -1,0 +1,323 @@
+% \documentclass{fp-slides}
+\documentclass[10pt,portrait]{beamer}
+\usetheme{Madrid}
+% \usetheme{Warsaw}
+\institute{O.O.Bogomolets National Medical University}
+% \ifx\pdfoutput\undefined
+% % we are running LaTeX, not pdflatex
+% \usepackage{graphicx}
+% \else
+% % we are running pdflatex, so convert .eps files to .pdf
+% \usepackage[pdftex]{graphicx}
+% \usepackage{epstopdf}
+% \fi 
+\usepackage{graphics}
+
+\linespread{1.1}
+\date{}
+\title{Introdution to medical informatics. Data and information.}
+\author[Shiray Andrey]{Shiray Andrey}
+
+\begin{document}
+ \frame{\titlepage}
+
+ \frame{
+   \frametitle{Outline}
+ 
+   \begin{itemize}
+   \item \Large Course overview
+
+   \item Medical informatics. Why? What for?
+
+\item Fundamental role of informatics in modern science.
+   
+  \item Information. Data. Knowledge.
+
+
+   \end{itemize}
+ }
+
+\frame{
+\frametitle{Course overview}
+\begin{itemize}
+\item \Large Information. Data. Knowledge
+\item Biostatistics
+\item Formal Logic. Expert and decision support systems in medicine
+\item Evidence-based medicine
+  \end{itemize}
+}
+
+\frame{
+\frametitle{Medical informatics}
+\Huge
+\textbf{Medical informatics}  -- the application of informatics to the field of biology and medicine/healthcare. 
+% (also called health informatics, health care informatics, healthcare informatics, clinical informatics, or biomedical informatics)
+}
+
+\frame{
+\frametitle{Informatics, Computers science}
+\begin{itemize}
+\item \Large \textbf{Informatics} -- the study of the processing, management, and retrieval of information
+\item \textbf{Computers science} -- is the study of the theoretical foundations of information and computation and of practical techniques for their implementation and application in computer systems
+\item \textbf{Cybernetics} is the interdisciplinary study of the structure of regulatory systems.
+\end{itemize}
+}
+
+\frame{
+\frametitle{Medical informatics. Why? What for?}
+\Large Medical informatics and borrows concepts/ideas from:
+\begin{itemize}
+ \item Medicine
+\item Informatics
+\item Logic
+\item Statistics
+\end{itemize}
+}
+
+\frame{
+\frametitle{Fundamental role of informatics in modern science}
+\begin{itemize}
+ \item \Large Any object in physical reality can be described with some information
+
+\end{itemize}
+
+}
+
+\frame{
+\frametitle{Fundamental role of informatics in modern science}
+\begin{itemize}
+ \item \Large Any object in physical reality can be described with some information
+\item Any physical process can be described as informational process
+\item Physical laws $\sim  $ program/algorithm
+\end{itemize}
+
+}
+
+\frame{
+\frametitle{Fundamental role of informatics in modern science}
+\begin{itemize}
+ \item \Large Any object in physical reality can be described with some information
+\item Any physical process can be described as informational process
+\item Physical laws $\sim  $ program/algorithm
+\item Universe is a gigantic computer!
+\begin{itemize}
+\item \footnotesize Seth Lloyd, Programming the Universe
+\item \footnotesize Roger Penrose, The Emperor's New Mind
+\end{itemize}
+\end{itemize}
+
+}
+
+
+
+\frame{
+\frametitle{Fundamental role of informatics in modern society}
+
+That's why informatics is an essential part of science disciplines in any University.
+
+
+You will need basic informatics skills in modern society:
+
+\begin{itemize}
+\item We live in so called information society. \footnotesize(or at least tend to develop it)
+ \item You may need to analyze systems/products
+\item You may need apply informatics skills  in your research projects
+\item You may need to implement prototypes
+\item You may need to oversee programmers in your future job
+\end{itemize}
+
+}
+
+\frame{
+\frametitle{Fundamental concepts of informatics}
+\begin{itemize}
+ \item \Large Information 
+\item Computation
+\item Data
+\item Knowledge
+\end{itemize}
+
+}
+
+\frame{
+\frametitle{Information}
+\Huge \textbf{Information} -- primitive notion\footnote{fundamental undefined concept; primitive, undefined, term} of modern science.
+
+\vspace{5mm}
+\normalsize So  it is not defined formally in terms of previously defined concepts, but is only motivated informally, usually by an appeal to intuition and everyday experience
+}
+
+\frame{
+\frametitle{Properties}
+\Large Properties of information:
+
+\begin{itemize}
+ \item \textbf{Objectivity} -- information doesn't depend upon storage method or your opinion
+\item \textbf{Authenticity} -- how trustworsy it is
+\item \textbf{Accuracy} 
+\item \textbf{Actual}
+ 
+\end{itemize}
+
+}
+
+
+\frame{
+\frametitle{Measures of Information. Shannon's  measure}
+In \textit{information theory}, \textbf{entropy} is a measure of the uncertainty associated with a random variable(in our case received message)
+
+
+\vspace{5mm}
+Shannon's  measure\footnote{also caled self-information }:
+$I(x) = \log (\frac{1}{P(x)}) = - \log(P(x)) $
+
+\vspace{5mm}
+Example:
+
+
+On tossing a coin, the chance of 'tail' is $0.5$. When it is proclaimed that indeed 'tail' occurred, this amounts to
+$I('tail') = log_2 (\frac{1}{0.5}) = \log_2 2 = 1$ bits of information.
+}
+
+%%%%%%%%%% Break
+
+
+\frame{
+\frametitle{Data}
+\textbf{Data} refers to qualitative or quantitative attributes of a variable or set of variables.
+
+\begin{itemize}
+\item For example -- results of measurements: $(35.7, 36.7, 42, 38, 39.4, 37.5, 40.1)$
+\item Raw data is the lowest level of abstraction. Raw data on its own carries no meaning.
+\end{itemize}
+
+
+}
+
+\frame{
+\frametitle{Data}
+\textbf{Data} refers to qualitative or quantitative attributes of a variable or set of variables.
+
+\begin{itemize}
+\item For example -- results of measurements: $(35.7, 36.7, 42, 38, 39.4, 37.5, 40.1)$
+\item Raw data is the lowest level of abstraction. Raw data on its own carries no meaning.
+\item Raw data needs some way of interpretation.
+\end{itemize}
+
+
+}
+
+\frame{
+\frametitle{Data}
+\textbf{Data} refers to qualitative or quantitative attributes of a variable or set of variables, stored in some way.
+
+\begin{itemize}
+\item For example -- results of measurements: $(35.7, 36.7, 42, 38, 39.4, 37.5, 40.1)$
+\item Raw data is the lowest level of abstraction. Raw data on its own carries no meaning.
+\item Raw data must be interpreted and take on a meaning
+\item Example: $(35.7, 36.7, 42, 38, 39.4, 37.5, 40.1)$ -- results of patients thermometrics
+\end{itemize}
+
+
+}
+
+\frame{
+\frametitle{Knowledge}
+\textbf{Knowledge} is a familiarity with someone or something, that can include facts/data, descriptions, information, and/or skills acquired through experience or education.
+
+
+\vspace{5mm}
+
+
+Main difference between knowledge and data: knowledge has dynamic nature by itself, it can change via learning. This the highest level of information abstraction.
+}
+\frame{
+\frametitle{Computation}
+\begin{itemize}
+
+\item \Large \textbf{Computation} -- any type of information processing.
+
+\end{itemize}
+}
+\frame{
+\frametitle{Computation}
+\begin{itemize}
+
+\item \Large \textbf{Computation} -- any type of information processing.
+
+
+\item A computation can be seen as a purely physical phenomenon occurring inside a closed physical system called a computer.
+
+\end{itemize}
+}
+\frame{
+\frametitle{Computation}
+\begin{itemize}
+
+\item \Large \textbf{Computation} -- any type of information processing.
+
+
+\item A computation can be seen as a purely physical phenomenon occurring inside a closed physical system called a computer.
+
+
+\item To describe a computation we need some formal way to state rules for information processing - \textbf{algorithm}.
+\end{itemize}
+}
+
+\frame{
+\frametitle{Algorithm}
+\Large \textbf{Algorithm}  is an effective method expressed as a finite list of well-defined instructions for computation.
+
+\vspace{5mm}
+Starting from an initial state and initial input (perhaps empty), the instructions describe a computation that, when executed, will proceed through a finite number of well-defined successive states,using finite amount of resources, eventually producing "output"
+}
+
+\frame{
+\frametitle{Properties of Algorithms}
+\begin{itemize}
+\item  \textbf{Finiteness} -- An algorithm must always terminate after a finite number of steps
+\item  \textbf{Definiteness} -- Each step of an algorithm must be precisely defined; the actions to be carried out must be rigorously and unambiguously specified for each case
+% \item Discrete
+\item \textbf{Discrete} --  moving in separate(discrete) steps: 1, 2, 3, ...
+\item \textbf{Input}
+\item \textbf{Output}
+% \item 
+\end{itemize}
+
+}
+% \frame{
+% \frametitle{Kolmogorov complexity. Human Genome.}
+% In algorithmic information theory, the \textbf{Kolmogorov complexity} of an object, such as a piece of text, is a measure of the computational resources needed to specify the object.
+% 
+% }
+% \frame{
+% \frametitle{Flowcharts}
+%  \begin{center}
+%  \begin{tabular}{ | m{2cm} | m{2cm} | m{5cm} |}
+% % \noalign{\smallskip}
+% % Name & Drawing & Function\\ \hline
+% % Start and end symbols & \includegraphics[scale=0.5]{ss} & signaling the start or end of a process\\  \hline
+% % Generic processing steps & \includegraphics[scale=0.5]{proc} & Examples: "Add 1 to X"; "replace identified part"; "save changes" or simila \\   \hline
+% % Conditional or decision & \includegraphics[scale=0.5]{if} &  showing where a decision is necessary, commonly a Yes/No question or True/False test 
+% % 
+%  \end{tabular}
+%  \end{center}
+% 
+% }
+
+% \frame{
+% \frametitle{Entropy. Complex systems.}
+%  \textbf{Entropy} -- amount of disorder in a system
+% 
+% 
+% }
+% 
+% \frame{
+% \frametitle{Information Ontology}
+% }
+
+
+
+
+
+\end{document}

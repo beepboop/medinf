@@ -1,0 +1,540 @@
+ \documentclass{fp-slides}
+% \ifx\pdfoutput\undefined
+% % we are running LaTeX, not pdflatex
+% \usepackage{graphicx}
+% \else
+% % we are running pdflatex, so convert .eps files to .pdf
+% \usepackage[pdftex]{graphicx}
+% \usepackage{epstopdf}
+% \fi 
+\usepackage{graphics}
+% \usepackage{tikz}
+\begin{document}
+ \frame{\titlepage}
+\frame{
+\frametitle{Outline}
+   \begin{itemize}
+  \item \Large Course overview
+%     \pause
+
+   \item Medical informatics. Why? What for?
+%      \pause
+
+\item Fundamental role of informatics in modern science.
+%    \pause
+  \item Information. Data. Knowledge.
+%     \pause
+
+  
+  \end{itemize}
+}
+
+
+% \frame{
+%   \framtitle{Outline}
+% 
+%   \begin{itemize}
+%   \item \Large Course overview
+% %     \pause
+% 
+%    \item Medical informatics. Why? What for?
+% %      \pause
+% 
+% \item Fundamental role of informatics in modern science.
+% %    \pause
+%   \item Information. Data. Knowledge.
+% %     \pause
+% 
+%   
+%   \end{itemize}
+% }
+
+\frame{
+\frametitle{Course overview}
+\begin{itemize}
+\item \Large Information. Data. Knowledge
+\item Biostatistics
+\item Formal Logic. Expert and decision support systems in medicine
+\item Evidence-based medicine
+  \end{itemize}
+}
+
+\frame{
+\frametitle{Medical informatics}
+\Huge
+\textbf{Medical informatics}  -- the application of informatics to the field of biology and medicine/healthcare. 
+% (also called health informatics, health care informatics, healthcare informatics, clinical informatics, or biomedical informatics)
+}
+
+\frame{
+\frametitle{Informatics, Computers science}
+\begin{itemize}
+\item \Large \textbf{Informatics} -- the study of the processing, management, and retrieval of information
+\item \textbf{Computers science} -- is the study of the theoretical foundations of information and computation and of practical techniques for their implementation and application in computer systems
+\item \textbf{Cybernetics} is the interdisciplinary study of the structure of regulatory systems.
+\end{itemize}
+}
+
+\frame{
+\frametitle{Medical informatics. Why? What for?}
+\Large Medical informatics borrows concepts/ideas from:
+\begin{itemize}
+ \item Medicine
+\item Informatics
+\item Logic
+\item Statistics
+\end{itemize}
+}
+
+ \frame{
+\frametitle{Medical informatics -- interdisciplinary study}
+\begin{center}
+\includegraphics[scale=0.7]{755}
+\end{center}
+
+}
+
+\frame{
+\frametitle{Fundamental role of informatics in modern science}
+\begin{itemize}
+ \item \Large Any object in physical reality can be described with some information
+
+\end{itemize}
+
+}
+
+\frame{
+\frametitle{Fundamental role of informatics in modern science}
+\begin{itemize}
+ \item \Large Any object in physical reality can be described with some information
+\item Any physical process can be described as informational process
+\item Physical laws $\sim  $ program/algorithm
+\end{itemize}
+
+}
+
+\frame{
+\frametitle{Fundamental role of informatics in modern science}
+\begin{itemize}
+ \item \Large Any object in physical reality can be described with some information
+\item Any physical process can be described as informational process
+\item Physical laws $\sim  $ program/algorithm
+\item Universe is a gigantic computer!
+\begin{itemize}
+\item \footnotesize Seth Lloyd, Programming the Universe
+\item \footnotesize Roger Penrose, The Emperor's New Mind
+\end{itemize}
+\end{itemize}
+
+}
+
+
+
+\frame{
+\frametitle{Fundamental role of informatics in modern society}
+
+That's why informatics is an essential part of science disciplines in any University.
+
+
+You will need basic informatics skills in modern society:
+
+\begin{itemize}
+\item We live in so called information society. \footnotesize(or at least tend to develop it)
+ \item You may need to analyze systems/products
+\item You may need apply informatics skills  in your research projects
+\item You may need to implement prototypes
+\item You may need to oversee programmers in your future job
+\end{itemize}
+
+}
+
+\frame{
+\frametitle{Fundamental concepts of informatics}
+\begin{itemize}
+ \item \Large Information 
+\item Computation
+\item Data
+\item Knowledge
+\end{itemize}
+
+}
+
+\frame{
+\frametitle{Information}
+\Huge \textbf{Information} -- primitive notion\footnote{fundamental undefined concept; primitive, undefined, term} of modern science.
+
+\vspace{5mm}
+\normalsize So  it is not defined formally in terms of previously defined concepts, but is only motivated informally, usually by an appeal to intuition and everyday experience
+}
+
+\frame{
+\frametitle{Properties}
+\Large Properties of information:
+
+\begin{itemize}
+ \item \textbf{Objectivity} -- information doesn't depend upon storage method or your opinion
+\item \textbf{Authenticity} -- how trustworsy it is
+\item \textbf{Accuracy} 
+\item \textbf{Actual}
+ 
+\end{itemize}
+
+}
+
+\frame{
+\frametitle{Transmission of Information}
+\includegraphics[scale=0.5]{comm.pdf}
+
+
+\vspace{2mm}
+All communicative situations include the presence of the sender information, its recipient and channel. Between any sender and a receiver there is always a transmission channel through which the message must pass.
+}
+% \frame{
+% \frametitle{Transmission of Information}
+% 
+% 
+% }
+% \frame{
+% \frametitle{Carriers of Messages}
+% \begin{itemize}
+%  \item 
+% \item 
+% \item 
+% \end{itemize}
+% 
+% 
+% }
+
+\frame{
+\frametitle{Measure}
+Function $\mu: \Omega \rightarrow \mathbb{R}$ is called \textbf{measure}, if:
+\begin{itemize}
+ \item $\forall A \in \Omega: \mu(A) \geq 0$ % неотрицательность 
+\item $\forall A,B \in \Omega, A \cap B = \varnothing: \mu(A \cup B) = \mu(A) + \mu(B) $ % аддитивность
+\item $A_n \searrow \varnothing: \mu(A_n) \longrightarrow 0 $ % непрерывность
+\end{itemize}
+
+Measure is mathematics's formalization/generalisation of such trivial common notion as \textbf{volume}. 
+}
+
+\frame{
+\frametitle{Measures of Information. Shannon's  measure}
+Well, we don't \textit{exactly} know what the information is. But for our practical goals we can define \textit{measures of information}, depending on our goals.
+
+
+\vspace{5mm}
+Shannon's  measure\footnote{also called self-information }:
+$I(x) = \log (\frac{1}{P(x)}) = - \log(P(x)) $
+Here $x \in X$ -- some message from the source $X$, $P(x)$ -- probability of receiving message x.
+
+\vspace{5mm}
+Example:
+
+
+On tossing a coin, the chance of 'tail' is $0.5$. When it is proclaimed that indeed 'tail' occurred, this amounts to
+$I('tail') = \log_2 (\frac{1}{0.5}) = \log_2 2 = 1$ bits of information.
+}
+
+\frame{
+\frametitle{Shannon's  measure. WTF?}
+Meaning behind the stages of all this math. Why Shannon has designed this measure to look so?
+His motives were simple:
+\begin{enumerate}
+\item $P(x)\searrow  \Rightarrow  I(x)\nearrow$ -- more unexpected message contains more information. 
+\item For independent messages we can add their informational measures: $\forall x,y \in X; x \cap y = \varnothing : I(x\cup y) = I(x) + I(y)$
+\item $I(x)=0 \Rightarrow P(x) = 1$ -- If we already know smt, then we don't receive any information at all.
+\end{enumerate}
+
+Unfortunately Shannon's  measure is not suitable for complex\footnote{In practise "complex" means more then 1--2 symbols or smt like so} messages.
+}
+
+
+\frame{
+\frametitle{Entropy.}
+ \textbf{Entropy} -- amount of disorder in a system
+
+
+In \textit{information theory}, \textbf{entropy} is a measure of the uncertainty associated with a random variable(in our case received message); 
+Entropy is an average amount of information in one message.
+
+
+\[
+ H(X) = \operatorname{M}(I(x)) = \sum_{x \in X} p(x) \log p(x)
+\]
+
+}
+
+
+\frame{
+\frametitle{Entropy. Example.}
+\begin{center}
+\begin{tabular}{lll}
+Message & Mark & Number of students\\
+$x_1$ & 5 & 125\\
+$x_2$ & 4 & 250\\
+$x_3$ & 3 & 500\\
+$x_4$ & 2 & 125
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{lll}
+$x_i$ & $P(x_i)$  & $I(x_i)$\\
+$x_1$ & $\frac{1}{8}$ &$ 3 $\\
+$x_2$ & $\frac{1}{4}$ &$ 2 $\\
+$x_3$ & $\frac{1}{2}$ &$ 1 $\\
+$x_4$ & $\frac{1}{8}$ &$ 3 $
+\end{tabular}
+\end{center}
+
+\[
+ H(X) = \frac{1}{8} \cdot 3 + \frac{1}{4} \cdot 2 + \frac{1}{2} \cdot 1 + \frac{1}{8} \cdot 3 
+\]
+
+}
+
+
+% % % % % % % % % % % % % % 
+%  Перерыв
+% % % % % % % % % % % % % % 
+
+\frame{
+\frametitle{Break}
+\Huge Let's have a \textbf{break}!
+
+
+}
+
+\frame{
+\frametitle{Data}
+\textbf{Data} refers to qualitative or quantitative attributes of a variable or set of variables.
+
+\begin{itemize}
+\item For example -- results of measurements: $(35.7, 36.7, 42, 38, 39.4, 37.5, 40.1)$
+\item Raw data is the lowest level of abstraction. Raw data on its own carries no meaning.
+\end{itemize}
+
+
+}
+
+\frame{
+\frametitle{Data}
+\textbf{Data} refers to qualitative or quantitative attributes of a variable or set of variables.
+
+\begin{itemize}
+\item For example -- results of measurements: $(35.7, 36.7, 42, 38, 39.4, 37.5, 40.1)$
+\item Raw data is the lowest level of abstraction. Raw data on its own carries no meaning.
+\item Raw data needs some way of interpretation.
+\end{itemize}
+
+
+}
+
+\frame{
+\frametitle{Data}
+\textbf{Data} refers to qualitative or quantitative attributes of a variable or set of variables, stored in some way.
+
+\begin{itemize}
+\item For example -- results of measurements: $(35.7, 36.7, 42, 38, 39.4, 37.5, 40.1)$
+\item Raw data is the lowest level of abstraction. Raw data on its own carries no meaning.
+\item Raw data must be interpreted and take on a meaning
+\item Example: $(35.7, 36.7, 42, 38, 39.4, 37.5, 40.1)$ -- results of patients thermometrics
+\end{itemize}
+
+
+}
+
+\frame{
+\frametitle{Knowledge}
+\textbf{Knowledge} is a familiarity with someone or something, that can include facts/data, descriptions, information, and/or skills acquired through experience or education.
+
+
+\vspace{5mm}
+
+
+Main difference between knowledge and data: knowledge has dynamic nature by itself, it can change via learning. This the highest level of information abstraction.
+}
+
+
+
+
+\frame{
+\frametitle{Computation}
+\begin{itemize}
+
+\item \Large \textbf{Computation} -- any type of information processing.
+
+\end{itemize}
+}
+\frame{
+\frametitle{Computation}
+\begin{itemize}
+
+\item \Large \textbf{Computation} -- any type of information processing.
+
+
+\item A computation can be seen as a purely physical phenomenon occurring inside a closed physical system called a computer.
+
+\end{itemize}
+}
+\frame{
+\frametitle{Computation}
+\begin{itemize}
+
+\item \Large \textbf{Computation} -- any type of information processing.
+
+
+\item A computation can be seen as a purely physical phenomenon occurring inside a closed physical system called a computer.
+
+
+\item To describe a computation we need some formal way to state rules for information processing - \textbf{algorithm}.
+\end{itemize}
+}
+
+\frame{
+\frametitle{Algorithm}
+\Large \textbf{Algorithm}  is an effective method expressed as a finite list of \textit{well-defined}\footnote{Because "well-defined" is not strict, formal term -- the whole definition, presented here, is \textbf{informal}. Though it is sufficient for basic intuitive understanding of the topic} instructions for computation.
+
+\vspace{5mm}
+Starting from an initial state and initial input (perhaps empty), the instructions describe a computation that, when executed, will proceed through a finite number of well-defined successive states,using finite amount of resources, eventually producing "output"
+}
+
+\frame{
+\frametitle{Properties of Algorithms}
+\begin{itemize}
+\item  \textbf{Finiteness} -- An algorithm must always terminate after a finite number of steps
+\item  \textbf{Definiteness} -- Each step of an algorithm must be precisely defined; the actions to be carried out must be rigorously and unambiguously specified for each case
+% \item Discrete
+\item \textbf{Discrete} --  moving in separate(discrete) steps: 1, 2, 3, ...
+\item \textbf{Input}
+\item \textbf{Output}
+% \item 
+\end{itemize}
+
+}
+
+\frame{
+\frametitle{Computability and computational complexity}
+Some task is called \textbf{computable} if there exists an algorithm for it.\footnote{Literally: it can be solved in general case.}
+\vspace{2mm}
+Not all tasks are computable.
+\vspace{5mm}
+\textbf{Computational complexity} -- informally, amount of resources we'll need to complete the task using selected algorithm. This characteristics helps us do determinate the most optimal algorithm to solve our problems.
+}
+
+\frame{
+\frametitle{Example -- herbal drug foalfoot}
+\begin{enumerate}
+ \item 10 g of herbal drug (2 spoons) place to enamel ware,
+\item Add 200 ml (1 cup) of boiled room-temperature water
+\item close cover and infuse on the water bath for 15 min
+\item Cool down for 45 min at the room temperature
+\item strain
+\item press out the rest to the strained infusion
+\item The infusion adds up with boiled water to 200 ml
+\item Take 0, 5 cup of warm infusion two times a time 15 min before meal
+% \item 
+\end{enumerate}
+
+%  , . , , press out the rest to the strained infusion. The infusion adds up with boiled water to 200 ml. Take 0, 5 cup of warm infusion two times a time 15 min before meal. 
+
+}
+
+\frame{
+\frametitle{Flowcharts}
+ \begin{center}
+\begin{center}
+\begin{tabular}{ll}
+Name & Drawing \\ \hline
+Start and end symbols & \includegraphics[scale=0.5]{ss} \\  
+Input/Output &  \includegraphics[scale=0.5]{io} \\  
+Generic processing steps & \includegraphics[scale=0.5]{proc}  \\   
+Conditional or decision & \includegraphics[scale=0.5]{if}  
+\end{tabular}
+\end{center}
+
+
+ \end{center}
+
+}
+% \frame{
+% \frametitle{}
+% 
+% 
+% }
+% TODO Types of Algorithms and Their Flowcharts
+\frame{
+\frametitle{Types of Algorithms and Their Flowcharts}
+
+\begin{enumerate}
+ \item \Large Linear algorithm
+\item \Large Branch algorithm
+\item \Large Cycle algorithm
+\end{enumerate}
+
+
+}
+% \frame{
+% \frametitle{Example}
+% 
+% 
+% }
+% \frame{
+% \frametitle{Example 2}
+% 
+% 
+% }
+% \frame{
+% \frametitle{Example 3}
+% 
+% 
+% }
+% Information Ontology
+% \frame{
+% \frametitle{Information Ontology}
+% 
+% 
+% }
+
+% TODO Kolmogorov complexity. Human Genome
+% \frame{
+% \frametitle{Kolmogorov complexity. Human Genome}
+% 
+% 
+% }
+
+\frame{
+\frametitle{Dixi}
+
+\begin{center}
+\Huge Dixi\end{center}
+}
+% \frame{
+% \frametitle{Kolmogorov complexity. Human Genome.}
+% In algorithmic information theory, the \textbf{Kolmogorov complexity} of an object, such as a piece of text, is a measure of the computational resources needed to specify the object.
+% 
+% }
+% \frame{
+% \frametitle{Flowcharts}
+%  \begin{center}
+%  \begin{tabular}{ | m{2cm} | m{2cm} | m{5cm} |}
+% % \noalign{\smallskip}
+% % Name & Drawing & Function\\ \hline
+% % Start and end symbols & \includegraphics[scale=0.5]{ss} & signaling the start or end of a process\\  \hline
+% % Generic processing steps & \includegraphics[scale=0.5]{proc} & Examples: "Add 1 to X"; "replace identified part"; "save changes" or simila \\   \hline
+% % Conditional or decision & \includegraphics[scale=0.5]{if} &  showing where a decision is necessary, commonly a Yes/No question or True/False test 
+% % 
+%  \end{tabular}
+%  \end{center}
+% 
+% }
+
+% \frame{
+% \frametitle{Information Ontology}
+% }
+
+
+
+
+
+\end{document}

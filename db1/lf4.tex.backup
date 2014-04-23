@@ -1,0 +1,197 @@
+% \documentclass{fp-slides}
+\documentclass[10pt,portrait]{beamer}
+\usepackage{mathtext}
+\usetheme{Warsaw}
+\newcommand{\maybepause}{}
+%\newcommand{\maybepause}{\pause}
+\setlength{\floatsep}{8pt plus 2pt minus 2pt}
+\setlength{\textfloatsep}{8pt plus 2pt minus 2pt}
+\setlength{\intextsep}{12pt plus 2pt minus 2pt}
+\AtBeginDocument{%
+% \selectlanguage{russian}%
+\frenchspacing
+\righthyphenmin=2
+\sloppy
+%\author{Shiray Andrey}
+\institute{O.O.Bogomolets National Medical University}
+\title{Databases}
+% Basics of statistical processing of biomedical  data
+}
+
+% \ifx\pdfoutput\undefined
+% % we are running LaTeX, not pdflatex
+% \usepackage{graphicx}
+% \else
+% % we are running pdflatex, so convert .eps files to .pdf
+% \usepackage[pdftex]{graphicx}
+% \usepackage{epstopdf}
+% \fi 
+\usepackage{graphics}
+\newtheorem{defin}{Definition}[section]
+\newtheorem{exa}{Example}[section]
+\begin{document}
+
+%%%%%%%%%%%%%%% Define code blocks
+
+% \defverbatim[colored]\factCcode{%
+% \begin{lstlisting}[frame=single,language=C]
+%   int fact(int n)
+%   { int x = 1;
+%     while (n > 0)
+%      { x = x * n;
+%        n = n - 1;
+%      }
+%     return x;
+%   }
+% \end{lstlisting}}
+% 
+% \defverbatim[colored]\factMLcode{%
+% \begin{lstlisting}[frame=single]
+%   let rec fact n =
+%     if n = 0 then 1
+%     else n * fact(n - 1);;
+% \end{lstlisting}}
+% 
+% \defverbatim[colored]\badFuncCode{%
+% \begin{lstlisting}[frame=single]
+%   int rand(void)
+%   { static int n = 0;
+%     return n = 2147001325 * n + 715136305;
+%   }
+% \end{lstlisting}}
+
+%%%%%%%%%%%%%%%%%%%%%%
+
+\frame{\titlepage}
+
+% \section*{Biostatistics}
+
+%\subsection{Обсуждаемые темы}
+
+
+\frame{
+  \frametitle{Data and databases}
+\begin{defin}
+ \textbf{Data} refers to qualitative or quantitative attributes of a variable or set of variables, stored in some way.
+\end{defin}
+
+\begin{defin}
+\textbf{Database management system (DBMS)} is a software system specifically designed to hold databases
+
+\end{defin}
+Database Management System (DBMS) provides  efficient, reliable, convenient, and safe multi-user storage of and access to massive
+amounts of persistent data.
+
+
+
+}
+\frame{
+  \frametitle{DBMS}
+Key concepts:
+\begin{itemize}
+ \item Data model
+\item Schema versus data
+\item Data definition language (DDL)
+\item Data manipulation language (DML)
+\end{itemize}
+
+
+}
+
+\frame{
+  \frametitle{Types}
+\begin{defin}
+ \textbf{Data type}  is a classification  that determines the \textbf{possible values} for that type; the \textbf{operations} that can be done on values of that type; the meaning of the data; and the way values of that type can be stored.
+\end{defin}
+
+
+
+}
+
+\frame{
+  \frametitle{Relational Databases}
+
+
+}
+
+
+\frame{
+  \frametitle{Relational Algebra (1)}
+
+
+}
+\frame{
+  \frametitle{Relational Algebra (2)}
+
+
+}
+
+
+
+\frame{
+  \frametitle{Relational Design Theory}
+
+
+}
+
+\frame{
+  \frametitle{Functional Dependencies}
+
+
+}
+
+\frame{
+  \frametitle{Boyce-Codd Normal Form}
+
+
+}
+
+\frame{
+  \frametitle{Multivalued Dependencies}
+
+
+}
+
+\frame{
+  \frametitle{Shortcomings of BCNF/4NF}
+
+
+}
+
+
+\frame{
+  \frametitle{Indexes}
+
+
+}
+
+\frame{
+  \frametitle{}
+
+
+}
+
+\frame{
+  \frametitle{}
+
+
+}
+
+\frame{
+  \frametitle{}
+
+
+}
+
+
+\frame{
+\frametitle{Dixi}
+
+\begin{center}
+\Huge Dixi\end{center}
+}
+% \frame{
+%   \frametitle{Dixi}
+% \resizebox{.4\hsize}{!}{ Dixi }
+% }
+\end{document}
